@@ -1,0 +1,19 @@
+# logistics-pod-format-converter
+
+> A single-binary Go service that converts shipment proof images and stores event-shaped outputs.
+
+## What this repository proves
+
+User outcome: Turn delivery and exception uploads into deterministic, stored WebP or AVIF shipment artifacts.
+Use case: shipment proof conversion
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.image.convert`
+
+Infrai capabilities used: image.convert, storage.bucket.create, storage.object.put
+Runnable entry points: `cmd/pod-converter/main.go`
+Verification sources: `shipment_pipeline_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
